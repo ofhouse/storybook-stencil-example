@@ -2,11 +2,11 @@
 
 # Storybook Stencil Example
 
-This is a starter project for building a standalone Web Component using Stencil.
+This is a starter project for building a component library with [Stencil](https://stenciljs.com/) and [Storybook](https://storybook.js.org/).
 
 ## Getting Started
 
-To start building a new web component using Stencil, clone this repo to a new directory:
+To start clone this repo to a new directory and run the following commands:
 
 ```sh
 npm install
