@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "start": "run-p stencil:start storybook:start",
+    "postinstall": "npm run stencil:init",
     "stencil:build": "stencil build --docs",
+    "stencil:init": "stencil build --dev",
     "stencil:start": "stencil build --dev --watch --serve",
     "stencil:test": "stencil test --spec --e2e",
     "stencil:test.watch": "stencil test --spec --e2e --watchAll",
