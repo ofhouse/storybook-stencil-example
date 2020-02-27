@@ -1,18 +1,22 @@
-const fs = require("fs");
-const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
-const WriteFilePlugin = require("write-file-webpack-plugin");
+const fs = require('fs');
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
-const OUTPUT_DIR = "../dist";
-const PROJECT_NAME = "storybook-stencil-example";
+const OUTPUT_DIR = '../dist';
+const PROJECT_NAME = 'storybook-stencil-example';
 
 module.exports = {
-  stories: ["../src/**/*.stories.js"],
-  addons: ["@storybook/addon-notes/register"],
+  stories: ['../src/**/*.stories.js'],
+  addons: [
+    '@storybook/addon-notes/register',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-actions/register',
+  ],
   async webpackFinal(config) {
     config.entry.push(path.join(__dirname, OUTPUT_DIR, `${PROJECT_NAME}.js`));
     fs.readdirSync(
-      path.join(__dirname, OUTPUT_DIR, "collection/components")
+      path.join(__dirname, OUTPUT_DIR, 'collection/components')
     ).map(file => {
       jsFilePath = path.join(
         __dirname,
@@ -44,15 +48,15 @@ module.exports = {
     config.plugins.push(
       new CopyPlugin([
         {
-          from: "**/*",
-          to: "./",
-          context: "dist"
-        }
+          from: '**/*',
+          to: './',
+          context: 'dist',
+        },
       ])
     );
 
     config.plugins.push(new WriteFilePlugin());
 
     return config;
-  }
+  },
 };
