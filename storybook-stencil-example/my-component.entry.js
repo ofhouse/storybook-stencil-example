@@ -1,9 +1,7 @@
-import { r as registerInstance, h } from './core-a7ceb129.js';
+import { r as registerInstance, h } from './core-3c93baab.js';
 
 function format(first, middle, last) {
-    return ((first || '') +
-        (middle ? ` ${middle}` : '') +
-        (last ? ` ${last}` : ''));
+    return ((first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : ''));
 }
 
 const MyComponent = class {

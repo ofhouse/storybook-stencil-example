@@ -1,5 +1,6 @@
 {
   "entries": [
+    "components/my-button/my-button.js",
     "components/my-component/my-component.js"
   ],
   "compiler": {
