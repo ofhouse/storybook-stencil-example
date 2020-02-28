@@ -1,10 +1,10 @@
 import { h } from "@stencil/core";
 export class MyButton {
-    onClickHandler(event) {
+    handleClick(event) {
         this.onClick.emit(event);
     }
     render() {
-        return h("button", null, this.label);
+        return h("button", { onClick: this.handleClick.bind(this) }, this.label);
     }
     static get is() { return "my-button"; }
     static get encapsulation() { return "shadow"; }
@@ -48,12 +48,5 @@ export class MyButton {
                 "resolved": "any",
                 "references": {}
             }
-        }]; }
-    static get listeners() { return [{
-            "name": "click",
-            "method": "onClickHandler",
-            "target": undefined,
-            "capture": false,
-            "passive": false
         }]; }
 }

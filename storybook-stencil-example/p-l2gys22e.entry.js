@@ -1,0 +1,1 @@
+import{r as t,c as s,h as i}from"./p-6b1b2302.js";const r=class{constructor(i){t(this,i),this.onClick=s(this,"onClick",7)}handleClick(t){this.onClick.emit(t)}render(){return i("button",{onClick:this.handleClick.bind(this)},this.label)}static get style(){return":host{display:block}"}};export{r as my_button};
