@@ -2,16 +2,32 @@
 
 # Storybook Stencil Example
 
-This is a starter project for building a component library with [Stencil](https://stenciljs.com/) and [Storybook](https://storybook.js.org/).
+This is a starter project for building a Web Component library with [Stencil](https://stenciljs.com/) and [Storybook](https://storybook.js.org/).
 
 ## Getting Started
 
-To start clone this repo to a new directory and run the following commands:
+To start clone this repo into a new directory and run the following commands:
 
 ```sh
 npm install
 npm start
 ```
+
+For a step-by-step tutorial how to recreate this from scratch you can follow this series of blog posts:
+
+<!-- prettier-ignore-start -->
+
+| [<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6PZ7zVmo--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--Xzs5q7Rn--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/grxlcvcbwkztn1h3tses.jpg" height="240px;"/><br />Part 1: <b>Build a Web Component library with Stencil and Storybook</b>](https://dev.to/ofhouse/build-a-web-component-library-with-stencil-and-storybook-c27) |
+| :---: |
+
+<!-- prettier-ignore-end -->
+
+## Features
+
+- [Storybook for HTML](https://storybook.js.org/docs/guides/guide-html/)
+- [Storybook Addon Notes](https://www.npmjs.com/package/@storybook/addon-notes)
+- [Storybook Addon Knobs](https://www.npmjs.com/package/@storybook/addon-knobs)
+- [Storybook Addon Actions](https://www.npmjs.com/package/@storybook/addon-actions)
 
 ## Author
 
