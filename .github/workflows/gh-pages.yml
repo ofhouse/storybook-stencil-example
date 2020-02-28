@@ -13,7 +13,8 @@ jobs:
           persist-credentials: false
       - name: Build
         run: |
-          npm install
+          npm ci
+          npm run stencil:build
           npm run storybook:build
 
       - name: Deploy

@@ -1,4 +1,4 @@
-import { Component, Prop, h, Event, EventEmitter, Listen } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'my-button',
@@ -10,12 +10,11 @@ export class MyButton {
 
   @Prop() label: string;
 
-  @Listen('click')
-  onClickHandler(event) {
+  handleClick(event: UIEvent) {
     this.onClick.emit(event);
   }
 
   render() {
-    return <button>{this.label}</button>;
+    return <button onClick={this.handleClick.bind(this)}>{this.label}</button>;
   }
 }
