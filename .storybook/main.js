@@ -3,7 +3,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-const OUTPUT_DIR = '../dist';
+const OUTPUT_DIR = './dist';
 const PROJECT_NAME = 'storybook-stencil-example';
 
 module.exports = {
@@ -14,12 +14,14 @@ module.exports = {
     '@storybook/addon-actions/register',
   ],
   async webpackFinal(config) {
-    config.entry.push(path.join(__dirname, OUTPUT_DIR, `${PROJECT_NAME}.js`));
+    const projectDir = process.cwd();
+
+    config.entry.push(path.join(projectDir, OUTPUT_DIR, `${PROJECT_NAME}.js`));
     fs.readdirSync(
-      path.join(__dirname, OUTPUT_DIR, 'collection/components')
+      path.join(projectDir, OUTPUT_DIR, 'collection/components')
     ).map(file => {
       jsFilePath = path.join(
-        __dirname,
+        projectDir,
         OUTPUT_DIR,
         `collection/components/${file}/${file}.js`
       );
@@ -32,7 +34,7 @@ module.exports = {
       }
 
       cssFilePath = path.join(
-        __dirname,
+        projectDir,
         OUTPUT_DIR,
         `collection/components/${file}/${file}.css`
       );
